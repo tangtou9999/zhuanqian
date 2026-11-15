@@ -23,6 +23,8 @@
 - [商业模式与单位经济模型](docs/BUSINESS_MODEL_AND_UNIT_ECONOMICS.md)
 - [竞品研究与产品取舍](docs/COMPETITOR_RESEARCH.md)
 - [研发路线图](docs/ROADMAP.md)
+- [数据模型与 API 契约](docs/DATA_MODEL_AND_API_CONTRACT.md)
+- [PostgreSQL 初始数据结构](database/migrations/001_initial_schema.sql)
 - [运营管理后台预览](admin.html)
 
 ## 自动质量检查
