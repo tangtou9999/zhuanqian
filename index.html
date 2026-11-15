@@ -20,7 +20,9 @@ var tasks=[
 {id:10,cat:"电商协作",title:"核对商品图片与标题",desc:"按商家提供的清单核对商品图片、标题和规格是否一致，异常项单独标记。",pay:20,unit:"/批",time:"预计25-40分钟",level:"会使用手机，做事细心",steps:["领取商品清单和核对规则","逐项对照图片、标题与规格","将不一致或无法确认的项目标记出来","提交核对表和异常说明"],standard:"每项都有核对结果；异常有证据或备注；不猜测、不编造缺失信息。"}
 ];
 var current="全部",my=[],requestStoreKey="zhuanqian_demo_requests_v1",ordersStoreKey="zhuanqian_demo_orders_v1";function el(s){return document.querySelector(s)}
-function loadRequests(){try{return JSON.parse(localStorage.getItem(requestStoreKey)||"[]")}catch(e){return []}}\nfunction loadOrders(){try{return JSON.parse(localStorage.getItem(ordersStoreKey)||"[]")}catch(e){return []}}\nfunction saveOrders(){try{localStorage.setItem(ordersStoreKey,JSON.stringify(my))}catch(e){toast("本机无法保存任务记录，请检查浏览器存储设置")}}
+function loadRequests(){try{return JSON.parse(localStorage.getItem(requestStoreKey)||"[]")}catch(e){return []}}
+function loadOrders(){try{return JSON.parse(localStorage.getItem(ordersStoreKey)||"[]")}catch(e){return []}}
+function saveOrders(){try{localStorage.setItem(ordersStoreKey,JSON.stringify(my))}catch(e){toast("本机无法保存任务记录，请检查浏览器存储设置")}}
 function saveRequests(a){try{localStorage.setItem(requestStoreKey,JSON.stringify(a))}catch(e){toast("本机暂时无法保存，请检查浏览器存储设置")}}
 function money(n){return "¥"+(Number(n)||0).toFixed(2)}
 function updateFeePreview(){var n=Number(el("#requestBudget").value)||0;el("#feeBase").textContent=money(n);el("#feeService").textContent=money(n*.08);el("#feeTotal").textContent=money(n*1.08)}
