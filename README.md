@@ -13,6 +13,9 @@
 - [ ] 企业端与运营管理后台
 - [ ] 真实交付验收、争议处理和合规结算
 
+## MVP后台与运营工作流
+后台模块、订单状态机、企业审核、任务拆分、验收、财务与风控设计见 [MVP后台与运营工作流](docs/MVP_BACKEND_AND_OPERATIONS_PLAN.md)。
+
 ## 平台研究\n竞品机制、任务拆解模型与产品取舍见 [docs/COMPETITOR_RESEARCH.md](docs/COMPETITOR_RESEARCH.md)。\n\n## 本地预览
 直接用浏览器打开根目录的 `index.html`。
 
