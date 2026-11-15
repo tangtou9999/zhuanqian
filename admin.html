@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#f4f6f3">
+<title>赚钱｜运营管理台（演示）</title>
+<style>
+:root{--bg:#f4f6f3;--paper:#fff;--ink:#1d2922;--muted:#718078;--line:#e5ebe6;--green:#168653;--pale:#eaf5ee;--amber:#a66a17;--red:#b84b4b}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}.shell{max-width:1180px;margin:auto;padding:22px}.top{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:18px}.brand{font-size:23px;font-weight:900}.brand b{color:var(--green)}.tag{font-size:12px;color:var(--amber);background:#fff5e4;padding:7px 11px;border-radius:20px}.warning{background:#fff7e9;border:1px solid #f1dfbd;color:#795820;padding:12px 14px;border-radius:12px;font-size:12px;line-height:1.65;margin-bottom:18px}.layout{display:grid;grid-template-columns:205px 1fr;gap:18px}.side,.panel,.metric{background:var(--paper);border:1px solid var(--line);border-radius:16px}.side{padding:12px;height:max-content;position:sticky;top:12px}.side button{display:block;width:100%;text-align:left;background:transparent;color:#59675f;border-radius:10px;padding:12px;margin:2px 0;font:inherit;font-size:13px}.side button.active{background:var(--pale);color:var(--green);font-weight:800}.content{min-width:0}.page{display:none}.page.active{display:block}.heading{display:flex;align-items:end;justify-content:space-between;gap:12px;margin:2px 0 16px}.heading h1{font-size:22px;margin:0}.heading p{margin:5px 0 0;color:var(--muted);font-size:12px}.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:14px}.metric{padding:15px}.metric span{font-size:11px;color:var(--muted)}.metric strong{display:block;font-size:22px;margin-top:7px}.grid{display:grid;grid-template-columns:1.15fr .85fr;gap:12px}.panel{padding:16px;margin-bottom:12px;min-width:0}.panel h3{font-size:14px;margin:0 0 13px}.muted{color:var(--muted);font-size:12px}.row{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:11px 0;border-bottom:1px solid var(--line);font-size:13px}.row:last-child{border:0}.pill{display:inline-block;padding:4px 8px;border-radius:20px;background:#f0f3f1;color:#65736b;font-size:10px;white-space:nowrap}.pill.green{background:#e9f5ed;color:var(--green)}.pill.amber{background:#fff4e2;color:var(--amber)}.btn{border:0;border-radius:9px;padding:9px 12px;background:var(--green);color:white;font-weight:700;font-size:12px;cursor:pointer}.btn.light{background:var(--pale);color:var(--green)}.btn.ghost{background:#f0f3f1;color:#58665e}.btn.danger{background:#fff0f0;color:var(--red)}.btn:disabled{opacity:.4;cursor:not-allowed}.actions{display:flex;gap:7px;flex-wrap:wrap;margin-top:10px}.field{display:block;margin:10px 0}.field label{display:block;font-size:11px;font-weight:700;margin-bottom:6px}.field input,.field textarea,.field select{width:100%;border:1px solid var(--line);border-radius:9px;padding:10px;font:inherit;font-size:13px;background:#fbfcfb;color:var(--ink)}.field textarea{min-height:75px}.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.tablewrap{overflow:auto}table{border-collapse:collapse;width:100%;font-size:12px;min-width:620px}th,td{text-align:left;padding:11px 9px;border-bottom:1px solid var(--line);vertical-align:top}th{color:var(--muted);font-weight:600;background:#fafbfa}.taskcard{border:1px solid var(--line);border-radius:12px;padding:12px;margin:9px 0}.taskcard strong{font-size:13px}.taskcard p{font-size:11px;color:var(--muted);line-height:1.6;margin:6px 0}.money{font-weight:900;color:var(--green)}.empty{padding:25px 10px;text-align:center;color:var(--muted);font-size:12px}.bar{height:7px;background:#edf1ed;border-radius:8px;overflow:hidden;margin-top:7px}.bar i{display:block;height:100%;background:var(--green)}.bottomlink{margin:16px 0;color:var(--muted);font-size:12px}.bottomlink a{color:var(--green);text-decoration:none}@media(max-width:760px){.shell{padding:14px}.layout{grid-template-columns:1fr}.side{position:static;display:flex;overflow:auto;gap:4px}.side button{white-space:nowrap;width:auto;flex:none}.metrics{grid-template-columns:repeat(2,1fr)}.grid{grid-template-columns:1fr}.heading h1{font-size:19px}.formgrid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<main class="shell">
+<header class="top"><div class="brand">赚<b>钱</b> · 运营管理台</div><span class="tag">内部原型 / 演示数据</span></header>
+<div class="warning">这是公开仓库中的前端演示后台，没有登录鉴权、服务端、真实企业数据或真实资金能力。所有新增和修改仅保存在当前浏览器。不得用于真实运营或录入个人敏感信息。</div>
+<div class="layout">
+<nav class="side">
+<button class="active" data-tab="overview">总览</button>
+<button data-tab="requests">需求审核</button>
+<button data-tab="projects">项目与拆单</button>
+<button data-tab="tasks">任务履约</button>
+<button data-tab="finance">利润核算</button>
+</nav>
+<div class="content">
+<section class="page active" id="overview">
+<div class="heading"><div><h1>运营总览</h1><p>先把每一笔任务的来源、成本和交付过程管清楚。</p></div><span class="pill amber">演示环境</span></div>
+<div class="metrics">
+<div class="metric"><span>待审核需求</span><strong id="mRequests">0</strong></div>
+<div class="metric"><span>项目总数</span><strong id="mProjects">0</strong></div>
+<div class="metric"><span>待验收任务</span><strong id="mReview">0</strong></div>
+<div class="metric"><span>预计贡献毛利</span><strong id="mMargin">¥0</strong></div>
+</div>
+<div class="grid">
+<div class="panel"><h3>最近项目</h3><div id="recentProjects"></div></div>
+<div class="panel"><h3>运营提醒</h3><div class="row"><span>真实需求方核验</span><span class="pill amber">上线前必须完成</span></div><div class="row"><span>合规资金结算</span><span class="pill amber">尚未接入</span></div><div class="row"><span>任务质量与返工</span><span class="pill green">原型可记录</span></div><div class="row"><span>个人信息保护</span><span class="pill amber">需后端设计</span></div></div>
+</div>
+</section>
+<section class="page" id="requests">
+<div class="heading"><div><h1>需求审核</h1><p>先核验需求，再核价，再决定是否发布。</p></div></div>
+<div class="panel"><h3>新增演示需求</h3><form id="requestForm">
+<div class="formgrid"><div class="field"><label>需求名称</label><input name="title" required maxlength="60" placeholder="例如：拍摄一段真实做饭视频"></div><div class="field"><label>需求类别</label><select name="category"><option>真人实拍素材</option><option>设计制作</option><option>AI办公</option><option>电商协作</option><option>文字整理</option><option>其他</option></select></div></div>
+<div class="field"><label>具体交付要求</label><textarea name="detail" required placeholder="写清楚要交付什么、格式、时长、用途和验收标准"></textarea></div>
+<div class="formgrid"><div class="field"><label>接单者报酬预算（元）</label><input name="budget" type="number" min="1" required placeholder="100"></div><div class="field"><label>需求方报价（元）</label><input name="quote" type="number" min="1" required placeholder="130"></div></div>
+<button class="btn" type="submit">保存为待审核</button></form></div>
+<div class="panel"><h3>审核队列</h3><div id="requestList"></div></div>
+</section>
+<section class="page" id="projects">
+<div class="heading"><div><h1>项目与任务拆分</h1><p>平台承接一个完整订单，再拆成可独立验收的任务包。</p></div></div>
+<div class="panel"><h3>创建演示项目</h3><form id="projectForm">
+<div class="formgrid"><div class="field"><label>项目名称</label><input name="title" required placeholder="例如：电商商品资料整理项目"></div><div class="field"><label>客户合同金额（元）</label><input name="revenue" type="number" min="1" required placeholder="1000"></div></div>
+<div class="formgrid"><div class="field"><label>接单者报酬预算（元）</label><input name="workerCost" type="number" min="0" required placeholder="600"></div><div class="field"><label>质检、物流等其他成本（元）</label><input name="otherCost" type="number" min="0" required placeholder="100"></div></div>
+<div class="field"><label>项目交付说明</label><textarea name="detail" required placeholder="描述最终交付物、质量标准和截止时间"></textarea></div>
+<button class="btn" type="submit">创建项目</button></form></div>
+<div class="panel"><h3>项目列表</h3><div id="projectList"></div></div>
+</section>
+<section class="page" id="tasks">
+<div class="heading"><div><h1>任务履约与验收</h1><p>子任务提交后由平台质检；合格后才进入可结算状态。</p></div></div>
+<div class="panel"><h3>全部子任务</h3><div id="taskList"></div></div>
+</section>
+<section class="page" id="finance">
+<div class="heading"><div><h1>利润核算</h1><p>项目差价不是净利润，必须扣除履约、质检和其他成本。</p></div></div>
+<div class="metrics">
+<div class="metric"><span>项目收入合计</span><strong id="fRevenue">¥0</strong></div>
+<div class="metric"><span>接单者报酬</span><strong id="fWorker">¥0</strong></div>
+<div class="metric"><span>其他成本</span><strong id="fOther">¥0</strong></div>
+<div class="metric"><span>贡献毛利</span><strong id="fMargin">¥0</strong></div>
+</div>
+<div class="panel"><h3>项目贡献毛利明细</h3><div class="tablewrap"><table><thead><tr><th>项目</th><th>客户收入</th><th>接单报酬</th><th>其他成本</th><th>贡献毛利</th><th>毛利率</th></tr></thead><tbody id="financeRows"></tbody></table></div></div>
+</section>
+</div>
+</div>
+<div class="bottomlink">用户端预览：<a href="./index.html">打开「赚钱」APP</a>　·　演示数据仅保存在本机</div>
+</main>
+<script>
+const KEY="zhuanqian_admin_demo_v1";
+const seed={requests:[{id:"R-001",title:"真人实拍：家庭做饭场景",category:"真人实拍素材",detail:"拍摄一段60秒以内、横屏的家庭做饭过程。需要本人原创拍摄并确认出镜者授权。",budget:80,quote:120,status:"待审核"}],projects:[{id:"P-001",title:"电商商品资料整理试点",revenue:1000,workerCost:600,otherCost:100,detail:"整理并核对200条商品资料，统一输出表格。",tasks:[{id:"T-001",title:"商品资料初步录入",pay:250,status:"待分配"},{id:"T-002",title:"商品图片与标题核对",pay:200,status:"待分配"},{id:"T-003",title:"数据复核与格式统一",pay:150,status:"待分配"}]}]};
+let data;
+try{data=JSON.parse(localStorage.getItem(KEY)||"null")||seed}catch(e){data=seed}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(data))}catch(e){alert("本机存储失败，请检查浏览器设置")}}
+function money(n){return "¥"+Number(n||0).toLocaleString("zh-CN",{maximumFractionDigits:2})}
+function esc(s){return String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+function margin(p){return Number(p.revenue)-Number(p.workerCost)-Number(p.otherCost)}
+function render(){
+document.querySelector("#mRequests").textContent=data.requests.filter(x=>x.status==="待审核").length;
+document.querySelector("#mProjects").textContent=data.projects.length;
+document.querySelector("#mReview").textContent=data.projects.reduce((n,p)=>n+p.tasks.filter(t=>t.status==="待验收").length,0);
+document.querySelector("#mMargin").textContent=money(data.projects.reduce((n,p)=>n+margin(p),0));
+document.querySelector("#recentProjects").innerHTML=data.projects.length?data.projects.slice(-4).reverse().map(p=>'<div class="row"><span>'+esc(p.title)+'</span><b class="money">'+money(margin(p))+'</b></div>').join(""):'<div class="empty">暂无项目</div>';
+document.querySelector("#requestList").innerHTML=data.requests.length?data.requests.map(r=>'<div class="taskcard"><strong>'+esc(r.title)+'</strong><p>'+esc(r.category)+' · 接单者预算 '+money(r.budget)+' · 需求方报价 '+money(r.quote)+'</p><p>'+esc(r.detail)+'</p><span class="pill '+(r.status==="已通过"?"green":r.status==="已拒绝"?"amber":"")+'">'+r.status+'</span><div class="actions"><button class="btn light" data-request="'+r.id+'" data-action="approve" '+(r.status!=="待审核"?"disabled":"")+'>审核通过</button><button class="btn danger" data-request="'+r.id+'" data-action="reject" '+(r.status!=="待审核"?"disabled":"")+'>拒绝需求</button></div></div>').join(""):'<div class="empty">暂无需求</div>';
+document.querySelector("#projectList").innerHTML=data.projects.length?data.projects.map(p=>'<div class="taskcard"><strong>'+esc(p.title)+'</strong><p>客户收入 '+money(p.revenue)+' · 接单者报酬 '+money(p.workerCost)+' · 其他成本 '+money(p.otherCost)+'</p><p>预计贡献毛利：<b class="money">'+money(margin(p))+'</b>（'+(p.revenue?Math.round(margin(p)/p.revenue*100):0)+'%）</p><p>'+esc(p.detail)+'</p><div class="actions"><button class="btn light" data-split="'+p.id+'">按预算自动拆成3个任务</button></div><div>'+p.tasks.map(t=>'<div class="row"><span>'+esc(t.title)+' · '+money(t.pay)+'</span><span class="pill">'+t.status+'</span></div>').join("")+'</div></div>').join(""):'<div class="empty">暂无项目</div>';
+const all=data.projects.flatMap(p=>p.tasks.map(t=>({...t,project:p.title})));
+document.querySelector("#taskList").innerHTML=all.length?all.map(t=>'<div class="taskcard"><strong>'+esc(t.title)+'</strong><p>'+esc(t.project)+' · 接单者报酬 '+money(t.pay)+'</p><span class="pill '+(t.status==="已验收"?"green":t.status==="待验收"?"amber":"")+'">'+t.status+'</span><div class="actions"><button class="btn light" data-task="'+t.id+'" data-status="待验收" '+(t.status!=="待分配"?"disabled":"")+'>模拟提交验收</button><button class="btn" data-task="'+t.id+'" data-status="已验收" '+(t.status!=="待验收"?"disabled":"")+'>验收通过</button><button class="btn danger" data-task="'+t.id+'" data-status="待修改" '+(t.status!=="待验收"?"disabled":"")+'>退回修改</button></div></div>').join(""):'<div class="empty">暂无子任务</div>';
+const sums=data.projects.reduce((a,p)=>({r:a.r+Number(p.revenue),w:a.w+Number(p.workerCost),o:a.o+Number(p.otherCost),m:a.m+margin(p)}),{r:0,w:0,o:0,m:0});
+document.querySelector("#fRevenue").textContent=money(sums.r);document.querySelector("#fWorker").textContent=money(sums.w);document.querySelector("#fOther").textContent=money(sums.o);document.querySelector("#fMargin").textContent=money(sums.m);
+document.querySelector("#financeRows").innerHTML=data.projects.map(p=>'<tr><td>'+esc(p.title)+'</td><td>'+money(p.revenue)+'</td><td>'+money(p.workerCost)+'</td><td>'+money(p.otherCost)+'</td><td class="money">'+money(margin(p))+'</td><td>'+(p.revenue?Math.round(margin(p)/p.revenue*100):0)+'%</td></tr>').join("")||'<tr><td colspan="6">暂无项目数据</td></tr>';
+}
+document.querySelectorAll("[data-tab]").forEach(b=>b.addEventListener("click",()=>{document.querySelectorAll("[data-tab]").forEach(x=>x.classList.toggle("active",x===b));document.querySelectorAll(".page").forEach(x=>x.classList.toggle("active",x.id===b.dataset.tab))}));
+document.querySelector("#requestForm").addEventListener("submit",e=>{e.preventDefault();const f=new FormData(e.target);data.requests.push({id:"R-"+Date.now(),title:f.get("title"),category:f.get("category"),detail:f.get("detail"),budget:Number(f.get("budget")),quote:Number(f.get("quote")),status:"待审核"});save();render();e.target.reset()});
+document.querySelector("#projectForm").addEventListener("submit",e=>{e.preventDefault();const f=new FormData(e.target);data.projects.push({id:"P-"+Date.now(),title:f.get("title"),revenue:Number(f.get("revenue")),workerCost:Number(f.get("workerCost")),otherCost:Number(f.get("otherCost")),detail:f.get("detail"),tasks:[]});save();render();e.target.reset()});
+document.addEventListener("click",e=>{
+const r=e.target.closest("[data-request]");if(r){const x=data.requests.find(x=>x.id===r.dataset.request);if(x){x.status=r.dataset.action==="approve"?"已通过":"已拒绝";save();render()}return}
+const p=e.target.closest("[data-split]");if(p){const x=data.projects.find(x=>x.id===p.dataset.split);if(x){const count=3,base=Math.floor(Number(x.workerCost)/count),rest=Number(x.workerCost)-base*count;x.tasks=[{id:"T-"+Date.now()+"-1",title:x.title+"｜第一工序",pay:base+(rest>0?1:0),status:"待分配"},{id:"T-"+Date.now()+"-2",title:x.title+"｜第二工序",pay:base+(rest>1?1:0),status:"待分配"},{id:"T-"+Date.now()+"-3",title:x.title+"｜最终复核",pay:base,status:"待分配"}];save();render()}return}
+const t=e.target.closest("[data-task]");if(t){for(const p of data.projects){const x=p.tasks.find(x=>x.id===t.dataset.task);if(x){x.status=t.dataset.status;break}}save();render()}
+});
+render();
+</script>
+</body>
+</html>
