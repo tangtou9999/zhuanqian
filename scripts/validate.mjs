@@ -54,7 +54,7 @@ if (["requestForm", "requestBudget", "feeBase", "feeService", "feeTotal", "taskL
 if (!html.includes("当前不会产生真实订单")) fail("Demo claim flow must clearly disclose that it creates no real order");
 else pass("Demo task claim is clearly labelled");
 
-if (!html.includes("不会发送到平台后台")) fail("Local-only request storage must be disclosed in the UI");
+if (!html.includes("尚未发送到平台后台")) fail("Local-only request storage must be disclosed in the UI");
 else pass("Local-only request submission is clearly disclosed");
 
 if (process.exitCode) process.exit(process.exitCode);
