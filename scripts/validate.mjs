@@ -2,7 +2,7 @@ import fs from "node:fs";
 import vm from "node:vm";
 
 const file = new URL("../index.html", import.meta.url);
-const html = fs.readFileSync(file, "utf8");
+const html = fs.readFileSync(file, "utf8");\nconst admin = fs.readFileSync(new URL("../admin.html", import.meta.url), "utf8");
 const fail = (message) => { console.error("FAIL:", message); process.exitCode = 1; };
 const pass = (message) => console.log("PASS:", message);
 
@@ -59,3 +59,17 @@ else pass("Local-only request submission is clearly disclosed");
 
 if (process.exitCode) process.exit(process.exitCode);
 console.log("Quality checks completed.");
+
+if (!admin.startsWith("<!doctype html>")) fail("admin.html must start with a doctype");
+else pass("Admin prototype has a doctype");
+const adminIds = [...admin.matchAll(/\\bid=["']([^"']+)["']/g)].map(m => m[1]);
+const adminDuplicates = adminIds.filter((id, i) => adminIds.indexOf(id) !== i);
+if (adminDuplicates.length) fail("Duplicate admin IDs: " + [...new Set(adminDuplicates)].join(", "));
+else pass("Admin element IDs are unique");
+const adminScripts = [...admin.matchAll(/<script>([\\s\\S]*?)<\\/script>/g)].map(m => m[1]);
+try { if (!adminScripts.length) throw new Error("No admin script found"); new vm.Script(adminScripts.join("\\n"), { filename: "admin.html:inline-script" }); pass("Admin JavaScript parses"); }
+catch (error) { fail("Admin JavaScript syntax error: " + error.message); }
+for (const label of ["需求审核","项目与任务拆分","任务履约与验收","利润核算","没有登录鉴权"]) {
+  if (!admin.includes(label)) fail("Admin prototype missing expected safeguard/module: " + label);
+}
+if (["需求审核","项目与任务拆分","任务履约与验收","利润核算","没有登录鉴权"].every(label => admin.includes(label))) pass("Admin prototype includes core operations modules and demo warning");
